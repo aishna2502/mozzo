@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+/*body{
+    background: -webkit-linear-gradient(#ff9a9e,#fad0c4); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#ff9a9e,#fad0c4); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#ff9a9e,#fad0c4); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#ff9a9e,#fad0c4); /* Standard syntax */
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+     -webkit-text-size-adjust: none; 
+    }*/
+
+body{
+    margin: 5px;
+}   
+    
+@media screen and (min-width:320px) and (max-width:295px){
+div.circular.ui.blue.button,div.circular.ui.orange.button{
+float:none;
+margin-top:3px;
+}
+#container{
+width:100%;
+padding:20px;
+float:none;}
+
+#sentiment_section{
+width:100%;
+height:auto;
+overflow-x:scroll;
+overflow-y:scroll;
+}
+#Review_semantic_section{
+width:200px;
+height:auto;
+overflow-x:scroll;
+overflow-y:scroll;
+}
+#Rating_section tbody{
+height:300px;
+overflow-x:scroll;
+overflow-y:scroll;
+}
+#review_section table tbody{
+height:400px;
+width:200px;
+display:block;
+overflow-y:scroll;
+overflow-x:scroll;
+}
+table{
+    width: 100%;
+}
+.review{
+width:100%;}
+}
+p{
+font-family:Verdana, Geneva, sans-serif;
+}
+
+#title_top{
+  display: block; /* may help stop any text wrapping and display it inline. */
+/*display: inline;*/
+/*text-overflow: ellipsis; */
+word-wrap: break-word;
+max-width: 100%;
+  margin-top: 135px; 
+  font-size: 50pt; 
+  text-align: 
+  center; 
+  font-family: 'Pacifico', cursive;
+  white-space: nowrap;
+}
+
+#Hotel_Title{
+color: black;
+font-family: 'Trocchi', serif; 
+font-size: 45px; 
+font-weight: normal;
+line-height: 48px;
+margin: 0;
+}
+#FeatureTable{
+width:100%;
+}
+#FeatureTable thead,#FeatureTable tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+}
+#FeatureTable tbody{
+height:110px;
+display:block;
+overflow:auto;
+}
+#FeatureTable tbody tr {
+display:table;
+width:100%;
+table-layout:fixed; 
+}
+#sentiment_section{
+width:100%;
+height:auto;
+overflow-x:scroll;
+overflow-y:auto;
+}
+#Review_semantic_section{
+width:200px;
+height:auto;
+overflow-x:scroll;
+}
+.review{
+padding:10px;
+width:100%;
+}
+#review_table{
+width:100%;
+}
+#review_table tbody{
+height:310px;
+display:block;
+overflow:auto;
+}
+#review_table tbody tr{
+display:none;
+width:100%;
+table-layout:fixed; 
+}
+.snippet{
+font-size:15px;
+}
+#details{
+font-size:20px;
+}
+/*chart style*/
+#chartdiv1 {
+    width       : 100%;
+    height      : 300px;
+    font-size   : 11px;
+}   
+#chartdiv2 {
+    width   : 100%;
+    height  : 300px;
+    
+}
+#semipiechart {
+  width: 100%;
+  height: 350px;
+}
+#fullpie{
+ width: 100%;
+ height: 350px;
+}
+#stacked_column{
+    width: 100%;
+    height: 500px;
+}           
+.box {
+  float: left;
+  width: 300px;
+  height: 100px;
+  margin: 5px;
+  border: 1px solid rgba(0, 0, 0, .2);
+  box-sizing: border-box;
+  border-radius: 3px;
+  color: #fff;
+}
+.blue {
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+.green {
+    background-color: #5cb85c;
+    border-color: #5cb85c;
+}
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+  height: 20px
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  line-height: 0px;
+}
+#myBarSuccess {
+  width: 10%;
+  height: 30px;
+  background-color: #0000FF;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  display: inline-block;
+}
+#myBarMed {
+    display: inline-block;
+  width: 10%;
+  height: 30px;
+  background-color: #9999ff;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+#myBarLow {
+  display: inline-block;
+  width: 10%;
+  height: 30px;
+  background-color: #cccc00;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+#myBar2 {
+  width: 10%;
+  height: 30px;
+  background-color: #b3b300;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  display: inline-block;
+}
+#myBar1 {
+  width: 10%;
+  height: 30px;
+  background-color: red;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  display: inline-block;
+}
+
+td{
+    text-align: center;
+    vertical-align: middle;
+    /*height: 50px;
+    width: 20px;*/
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 200px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    /*min-height: 250px;*/
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 50%;
+    /*height: 250px;*/
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #ffffff;
+    color: black;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #ffffff;
+    color: black;
+    clear: left;
+}   
+
+#trend_box{
+   width: auto;
+   height: 25px;
+   align-content: center;
+   align-items: center;
+   vertical-align: middle;
+   padding: 5px;
+   background-color: white;
+   border: 1px solid blue;
+   color: black; 
+  } 
+
+.big{
+    font-size: 15pt;
+    
+}
+
+#sentiments{
+    width: 100%;
+    text-align: center;
+}
+
+table{
+    width: 100%;
+    table-layout: fixed;
+    border-spacing: 0;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+
+#box_sent{
+    text-align: center;
+    /*background-color: green;*/
+}
+
+td{
+    position: relative;
+    width:100px; 
+    text-align: center;
+    align-content: center;
+    align-items: center;
+
+    /*background-color: white;*/
+    /*height:50;*/
+}
+
+.ratingCount {
+  color: #555;
+  margin-left: 2.5px;
+}
+
+.modal-scrollfix.modal-scrollfix {
+    overflow-y: hidden;
+}
+
+.modular{
+    border:1px solid black;
+    height:auto;
+    padding: 13px;
+    margin: 13px;
+    box-shadow:  10px 10px 5px #888888;
+}
+
+.author_name{
+    font-size: 12pt;
+}
+
+
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+
+#perma_review{
+    padding: 3px;
+    border: solid 1px blue;
+    border-radius: 5px;
+}
+
+#content_review{
+    padding: 10px;
+}
+
+.rating-static {
+  width: 60px;
+  height: 16px;
+  display: block;
+  background: url('http://www.itsalif.info/blogfiles/rating/star-rating.png') 0 0 no-repeat;
+}
+
+.rating-50 { background-position: 0 0; }
+.rating-40 { background-position: -12px 0; } 
+.rating-30 { background-position: -24px 0; }
+.rating-20 { background-position: -36px 0; }
+.rating-10 { background-position: -48px 0; }
+.rating-0 { background-position: -60px 0; }
+ 
+.rating-5  { background-position: -48px -16px; }
+.rating-15 { background-position: -36px -16px; }
+.rating-25 { background-position: -24px -16px; }
+.rating-35 { background-position: -12px -16px; }
+.rating-45 { background-position: 0 -16px; }
+
+#review_body{
+    display: table;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+}

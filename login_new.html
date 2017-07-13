@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="new_login.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.8/semantic.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.8/semantic.min.js"></script>
+
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css" rel="stylesheet" type="text/css" />
+<!-- <script src="https://code.jquery.com/jquery-2.1.4.js"></script> -->
+<script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
+  <meta charset="utf-8">
+  <!-- <script type="text/javascript" src="new_login.js"></script> -->
+  <title>LOGIN</title>
+
+  <style type="text/css">
+    body{
+      margin: 50px;
+    }  
+  </style>
+
+</head>
+<body>
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <h2 class="ui image header">
+      <div class="content">
+        Log-in to your account
+      </div>
+    </h2>
+    <form action="HotelDashboard.html" method="get" class="ui large form">
+
+      <div class="ui stacked secondary  segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input type="text" name="email" placeholder="E-mail address">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input type="password" name="password" placeholder="Password">
+          </div>
+        </div>
+
+         <div class="field">
+          <select name="pname" id= "dropDownDest"><!-- <option selected="selected">---</option> --></select>
+        </div> 
+        <div class="field">
+        <div class="ui calendar" id="from">
+          <div class="ui input left icon">
+            <i class="calendar icon"></i>
+            <input type="text" placeholder="From Date" id="from_date">
+          </div>
+        </div>
+        </div>
+        <div class="field">
+        <div class="ui calendar" id="To">
+          <div class="ui input left icon">
+            <i class="calendar icon"></i>
+            <input type="text" placeholder="To Date" id="to_date">
+          </div>
+        </div>
+        </div>
+             <script>
+    $(document).ready(function () {
+          $('#from').calendar({
+            type: 'date',
+            endCalendar: $('#To'),
+                    })
+          ;});
+    // moment(dateInputValue).format("DD/MM/YY");
+    
+    $(document).ready(function () {
+          $('#To').calendar({
+            type: 'date',
+          startCalendar: $('#from'),          });}); 
+
+          </script>
+          <!-- <input type="button" class="ui button green button" value="Go" id="btnQueryString" style="margin: 5px; align-content: center; vertical-align: middle; width: 35px;height: 35px; padding: 10px"> -->
+        <div class="ui button fluid large teal" id="btnQueryString">Login</div>
+          <div class="ui error message"></div>
+      </div>
+    </form>
+
+    <div class="ui message">
+      New to us? <a href="#">Register</a>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+      $('.ui.form')
+        .form({
+          fields: {
+            email: {
+              identifier  : 'email',
+              rules: [
+                {
+                  type   : 'empty',
+                  prompt : 'Please enter your e-mail'
+                },
+                {
+                  type   : 'email',
+                  prompt : 'Please enter a valid e-mail'
+                }
+              ]
+            },
+            password: {
+              identifier  : 'password',
+              rules: [
+                {
+                  type   : 'empty',
+                  prompt : 'Please enter your password'
+                },
+                {
+                  type   : 'length[6]',
+                  prompt : 'Your password must be at least 6 characters'
+                }
+              ]
+            },
+            pname: {
+              identifier  : 'pname',
+              rules: [
+                {
+                  type   : 'empty',
+                  prompt : 'Please select one hotel'
+                }
+              ] 
+            },
+            from: {
+              identifier  : 'from_date',
+              rules: [
+                {
+                  type   : 'empty',
+                  prompt : 'Please select start date'
+                }
+              ] 
+            },
+            To: {
+              identifier  : 'to_date',
+              rules: [
+                {
+                  type   : 'empty',
+                  prompt : 'Please select end date'
+                }
+              ] 
+            }
+          }
+        })
+      ;
+    })
+  ;
+</script>
+
+
+
+<script type="text/javascript">
+  var d = {
+      "sku": [
+        {
+          "pname": "626240c3-91b1-4f1c-9bf1-92851c30db93",
+          "name": "Hyatt Regency Mumbai"
+
+        },
+        {
+          "pname": "6d3a4a4e-8ed1-4074-8068-d7e4cbfc42ed",
+          "name": "Courtyard Mumbai International Airport"
+
+        },
+        {
+          "pname": "3d1114f1-f7cb-497b-b22f-973fdc5a9bbf",
+          "name": "Four Seasons Hotel Mumbai"
+
+        },
+        {
+          "pname": "dbc8473b-7a80-485a-a6fb-64b6959d05ab",
+          "name": "JW Marriott Mumbai Juhu"
+
+        },
+        {
+          "pname": "2980f470-d70a-4699-9b8d-e932a7145d99",
+          "name": "The Leela Mumbai"
+
+        },
+        {
+          "pname": "f753682b-b25b-422f-899d-4480622bcd87",
+          "name": "InterContinental Marine Drive"
+
+        },
+        {
+          "pname": "df09dddf-56fe-4d56-a1b1-97a306b7f58e",
+          "name": "The Machan"
+
+        },
+      ]
+    }
+
+  // var d = JSON.parse('{'+d+'}');
+
+d.sku.forEach(function (obj) {        
+   $("<option />", {value: obj.pname, text: obj.name, class:"tag"}).appendTo($('select'));
+})
+</script>
+
+<script type="text/javascript">
+    
+    // $(function val() {
+    //     $("#btnQueryString").bind("click", function () {
+    //       var eID = document.getElementById("dropDownDest"); 
+    //       var dayVal = eID.options[eID.selectedIndex].value; 
+    //       var daytxt = eID.options[eID.selectedIndex].text; 
+    //       alert("Selected Item " + daytxt + ", Value " + dayVal);
+    //       // console.log("Selected Item " + daytxt + ", Value " + dayVal);
+    //         var url = "HotelDashboard.html?pname=" + encodeURIComponent(dayVal);
+    //         window.location.href = url;
+    //     });
+    // });
+</script>
+
+<script type="text/javascript">
+  function convert_date(str_date){
+   var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    var date_array = str_date.split(",");
+    var year = date_array[1].replace(" ","");
+    var month = date_array[0].split(" ")[0];
+     var date= date_array[0].split(" ")[1];
+     var desired_date =date+'/'+(months.indexOf(month)+1)+"/"+year ;
+  //This Will return the date in the desired format
+    
+   return desired_date;  
+
+}
+  </script>
+
+  <script type="text/javascript">
+    $(function () {
+        $("#btnQueryString").bind("click", function () {
+           var url = "HotelDashboard.html?pname=" + encodeURIComponent($("#dropDownDest").val()) + "&start_date=" + encodeURIComponent(convert_date($("#from_date").val())) + "&end_date=" + encodeURIComponent(convert_date($("#to_date").val()));
+            window.location.href = url;
+        });
+    });
+  </script>
+
+
+</body>
+</html>

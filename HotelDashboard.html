@@ -405,10 +405,93 @@ function round(value, decimals) {
 						var button = document.createElement("BUTTON");
 						var t = document.createTextNode(button_name);
 						button.appendChild(t);
-						button.className = 'circular ui orange button';
+						button.className = 'circular ui orange button modalView';
 						document.getElementById("burning_buttons").appendChild(button);
 					}
-				}
+					var modal = document.getElementById('modal');
+					btns = document.getElementsByClassName("modalView");
+					var span = document.getElementsByClassName("close")[0];
+					var modalBody = document.getElementsByClassName("modal-body")[0];
+					
+						// console.log(Btn.innerHTML);
+					[].forEach.call(btns, function(el) {
+					
+					  el.onclick = function() {
+					  	url = 'https://www.buzzopinion.com/externalapi?function=get_entity_feature_comments&sku='+getAllUrlParams().pname + '&feature=' + el.textContent;
+
+							console.log(el.textContent);
+							document.getElementById("data").innerHTML = "";
+							document.getElementsByClassName("modal-body").innerHTML = "";	
+							$("#modalBody").empty();
+							// var div = document.createElement('div');
+							// div.className = "modal_div";
+					  		fetch(url)
+							.then((resp) => resp.json())
+							.then(function(data){
+								// let pos_cnt = 0;
+								// let neg_cnt = 0;
+								var modalHead = document.getElementById('data');
+								var total = `${data.total_count}` + " User Opinions";
+								var total_div = document.createElement('div');
+								total_div.style.fontSize = 14 + "pt";
+								total_div.innerHTML = total;	
+								var h2 = document.createElement('h2');
+								h2.innerHTML=el.textContent.toUpperCase();
+								modalHead.appendChild(h2);	
+								modalHead.style.display="inline-block";
+								modalBody = document.getElementById("modalBody");
+								// console.log(el.textContent);
+								let examples = data.examples;
+								return examples.map(function(example){
+									var div = document.createElement('div');
+									div.innerHTML = `${example.date}`;
+									modalHead.appendChild(total_div);			
+										// console.log(ratediv);
+											// modalHead.appendChild(ratediv);
+									var p = document.createElement('p');
+									var author = document.createElement('p');
+									author.innerHTML = `${example.author}`;
+									var perma = document.createElement('a');
+									perma.href = `${example.permalink}`;
+									perma.innerHTML = "Read Full Review on " + `${example.source_text}`;
+									perma.id = "perma_review";
+									author.className = "author_name";
+									author.style.display = "inline";
+									div.style.display = "inline";
+									div.style.float = "right";
+									var rough_div = document.createElement('div');
+									rough_div.className = "modular";
+									rough_div.appendChild(author);
+									rough_div.appendChild(div);
+									p.innerHTML = '"' + `${example.text}` + '"<br><br>';
+									p.appendChild(perma);
+									p.id = "content_review";
+									rough_div.appendChild(p);
+									modalBody.appendChild(rough_div);
+									// modalBody.appendChild(div);
+									modal.style.display = "block";
+									if(`${example.polarity}`.match("pro")){
+										author.innerHTML = author.innerHTML + ' <i class="fa fa-thumbs-o-up" style="color:green" aria-hidden="true"></i>';
+												// pos_cnt++;
+									}
+									else{
+										author.innerHTML = author.innerHTML + ' <i class="fa fa-thumbs-o-down" style="color:red" aria-hidden="true"></i>';	
+										// neg_count++;
+									}
+
+								})
+							})
+					  	}
+					})
+					span.onclick = function() {
+					    modal.style.display = "none";
+					}
+					window.onclick = function(event) {
+					    if (event.target == modal) {
+					        modal.style.display = "none";
+					    }
+					}
+				},				
 				
 			});
 			</script>
